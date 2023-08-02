@@ -1,0 +1,195 @@
+<HTML>
+<HEAD>
+<link rel="icon" href="http://profs.sci.univr.it/~bonacina/owl.gif" type="image/gif" />
+<TITLE>The Clause-Diffusion theorem provers</TITLE>
+</HEAD>
+<BODY BGCOLOR="#99FF99">
+<H2>The Clause-Diffusion theorem provers</H2>
+
+<A HREF="http://profs.sci.univr.it/~bonacina/distributed.html">
+Clause-Diffusion</A> is a general methodology for distributed deduction by
+<em>distributed search</em>:
+the search space of the theorem proving problem
+is subdivided among concurrent <em>asynchronous</em> deductive processes,
+each generating a derivation and keeping a database of clauses.
+A distributed derivation is given by the collection of these derivations,
+and it succeeds as soon as one of them does.
+A Clause-Diffusion strategy is defined by an <em>inference system</em> and a
+<em>parallel search plan</em>, executed by each process.
+The parallel search plan controls
+the selection of inferences, like in sequential search,
+their <em>subdivision</em>, with a choice of <em>subdivision criteria</em>,
+and the <em>diffusion</em> of clauses by broadcasting.
+There is no need for a master or top-level scheduler to distribute the work:
+the subdivision of inferences is achieved dynamically by the processes,
+by subdividing the clauses, hence the inferences.
+The following Clause-Diffusion provers were developed:
+<ul>
+<li><b>Aquarius (January 1992 - December 1992)</b>
+was developed for workstation networks (each deductive process runs on a 
+workstation) at <A HREF="http://www.cs.sunysb.edu/">SUNY Stony Brook</A>
+in the spring and summer of 1992, as part of
+<A HREF="http://profs.sci.univr.it/~bonacina/pub_theses.html">my Phd thesis</A>,
+and experimentation continued till the end of that year.
+Aquarius was the Clause-Diffusion parallelization of
+<A HREF="http://www.cs.unm.edu/~mccune/otter/">Otter</A> (version 2.2).
+The logic is first-order logic with equality, and the code is written in C,
+using the high-level language PCN for parallelism and communication:
+<ul>
+<li>Maria Paola Bonacina and Jieh Hsiang.
+<A HREF="http://profs.sci.univr.it/~bonacina/papers/JSC1995aquarius.pdf">Distributed
+deduction by Clause-Diffusion: distributed contraction and the Aquarius prover</A>.
+<A HREF="http://www4.ncsu.edu/~hong/jsc.htm">Journal of Symbolic Computation</A>, 19:245-267, January-March 1995;
+<A HREF="http://doi.org/10.1006/jsco.1995.1014">DOI: 10.1006/jsco.1995.1014</A>.
+<li>Maria Paola Bonacina and Jieh Hsiang.
+<A HREF="http://profs.sci.univr.it/~bonacina/papers/DISCO1993aquarius.pdf">Distributed
+deduction by Clause-Diffusion: the Aquarius prover</A>.
+In <em>Proceedings of the 3rd International Symposium on Design and Implementation of
+Symbolic Computation Systems (DISCO)</em>, Gmunden, Austria, September 1993.
+<A HREF="https://link.springer.com/">Springer</A>,
+Lecture Notes in Computer Science 722, 272-287, 1993;
+<A HREF="http://doi.org/10.1007/BFb0013183">DOI: 10.1007/BFb0013183</A>.
+<li>Maria Paola Bonacina and Jieh Hsiang.
+<A HREF="http://profs.sci.univr.it/~bonacina/papers/PIS1990distributed.pdf">A system for distributed simplification-based theorem proving (Project summary)</A>.
+In <em>Proceedings of the 1st International Workshop on Parallelization in Inference
+Systems</em>, Schloss Dagstuhl, Germany, December 1990.
+<A HREF="https://link.springer.com/">Springer</A>,
+Lecture Notes in Artificial Intelligence 590, 370-370, 1992;
+<A HREF="http://doi.org/10.1007/3-540-55425-4_18">DOI: 10.1007/3-540-55425-4_18</A>.
+</ul>
+<p>
+<li><b>Peers (January 1993 - May 1995)</b> was developed for workstation networks at the
+<A HREF="http://www.mcs.anl.gov/">Argonne National Laboratory</A>
+in January-February 1993.
+Peers is a Clause-Diffusion prover for equational theories, possibly modulo
+associativity and commutativity. It was written in C using
+<A HREF="http://www.netlib.org/p4/index.html">p4</A> for message-passing,
+and incorporating code from the <em>Otter Parts Store</em> (version of December 1992).
+Its name emphasizes that all processes in Clause-Diffusion are peers,
+with no master-slave relation.
+Peers and its experiments up to March 1994 were presented in:
+<ul>
+<li>Maria Paola Bonacina and
+<A HREF="http://www.cs.unm.edu/~mccune/">William W. McCune</A>.
+<A HREF="http://profs.sci.univr.it/~bonacina/papers/CADE1994peers.pdf">Distributed theorem
+proving by Peers</A>.
+<em>Proceedings of CADE-12</em>,
+<A HREF="https://link.springer.com/">Springer</A>,
+Lecture Notes in Artificial Intelligence 814, 841-845, 1994;
+<A HREF="http://doi.org/10.1007/3-540-58156-1_72">DOI: 10.1007/3-540-58156-1_72</A>.
+<li>Maria Paola Bonacina and Jieh Hsiang.
+<A HREF="http://profs.sci.univr.it/~bonacina/papers/FI1995cldif.pdf">The Clause-Diffusion methodology for distributed deduction</A>.
+<A HREF="http://fi.mimuw.edu.pl/">Fundamenta Informaticae</A>, 24(1,2):177-207, September 1995;
+<A HREF="http://doi.org/10.3233/FI-1995-24128">DOI: 10.3233/FI-1995-24128</A>.
+</ul>
+<p>
+<li><b>Peers-mcd</b> was the successor of Peers, implementing
+Modified Clause-Diffusion rather than Clause-Diffusion. Four versions were developed:
+<p>
+<ul>
+<li><b>Peers-mcd.a (June 1995 - September 1996)</b> was written in June 1995.
+The experimentation up to October 1996 is reported in:
+<ul>
+<li>Maria Paola Bonacina.
+<A HREF="http://profs.sci.univr.it/~bonacina/papers/JSC1996mcd.pdf">
+On the reconstruction of proofs in distributed theorem proving: a modified Clause-Diffusion method</A>.
+<A HREF="http://www4.ncsu.edu/~hong/jsc.htm">Journal of Symbolic Computation</A>, 21(4-6):507-522, April-June 1996;
+<A HREF="http://doi.org/10.1006/jsco.1996.0028">DOI: 10.1006/jsco.1996.0028</A>.
+</ul>
+<p>
+<li><b>Peers-mcd.b (October 1996 - January 1999):</b>
+work on Peers-mcd restarted in June 1996, and in October 1996
+a completely new Peers-mcd theorem prover (Peers-mcd.b)
+was built on top of the Argonne prover
+<A HREF="http://www.cs.unm.edu/~mccune/eqp/">EQP</A> (version 0.9), that had just proved that 
+<A HREF="http://www.cs.unm.edu/~mccune/papers/robbins/">Robbins algebras are Boolean</A>.
+Peers-mcd was written in C using
+<A HREF="http://www.netlib.org/mpi/index.html">MPI</A> for message-passing,
+and was ported on both workstation networks and multiprocessors.
+In addition to a different implementation,
+Peers-mcd differed from its predecessors because it featured a new family
+of criteria for subdivision of clauses, the <em>Ancestor-Graph Oriented criteria</em>,
+or <em>AGO criteria</em> for short.
+The theorem prover, the AGO criteria, and the experimental results up to
+the summer of 1997, including <em>instances of super-linear speed-up</em>
+on two lemmas that represent two thirds of the proof of the Robbins problem, are described in:
+<ul>
+<li>Maria Paola Bonacina.
+<A HREF="http://profs.sci.univr.it/~bonacina/papers/CADE1997peersmcd.pdf">The Clause-Diffusion
+theorem prover Peers-mcd</A>.
+In <em>Proceedings of the 14th International Conference on Automated Deduction
+(CADE)</em>, <A HREF="https://link.springer.com/">Springer</A>,
+Lecture Notes in Artificial Intelligence 1249, 53-56, 1997;
+<A HREF="http://doi.org/10.1007/3-540-63104-6_6">DOI: 10.1007/3-540-63104-6_6</A>.
+<li>Maria Paola Bonacina.
+<A HREF="http://profs.sci.univr.it/~bonacina/papers/PASCO1997AGOstrategies.pdf">
+Experiments with subdivision of search in distributed theorem proving</A>.
+In <em>Proceedings of the 2nd International Symposium on Parallel Symbolic Computation (PASCO)</em>,
+Wailea, Maui, Hawaii, July 1997. ACM Press, 88-100, 1997;
+<A HREF="http://doi.org/10.1145/266670.266696">DOI: 10.1145/266670.266696</A>
+(<A HREF="http://profs.sci.univr.it/~bonacina/ACMcopyrightnotice.html">&#169;[ACM Inc.][1997]</A>).
+</ul>
+In May 1998, Peers-mcd.b succeded in solving the <em>Levi Commutator Problem</em>
+in Group Theory, that had been given as a challenge at the
+CADE-15 Workshop on Problem Solving Methodologies with Automated Deduction:
+<ul>
+<li>Maria Paola Bonacina.
+<A HREF="http://profs.sci.univr.it/~bonacina/papers/PSM-CADE1998LeviCommut.pdf">Mechanical
+proofs of the Levi commutator problem</A>.
+Workshop on Problem Solving Methodologies with Automated Deduction,
+at the <em>15th International Conference on Automated Deduction (CADE)</em>, July 1998.
+</ul>
+<p>
+<li><b>Peers-mcd.c (February 1999 - March 2000)</b> was written
+in the spring of 1999 with version 0.9d of
+<A HREF="http://www.cs.unm.edu/~mccune/eqp/">EQP</A> as sequential base.
+The Robbins experiments were repeated,
+confirming the super-linear speed-up in the first two lemmas
+that form the proof of the Robbins conjecture, and obtaining an almost linear speed-up
+in the third. These experiments are described in:
+<ul>
+<li>Maria Paola Bonacina.
+<A HREF="http://profs.sci.univr.it/~bonacina/papers/AMAI2000paratax.pdf">
+A taxonomy of parallel strategies for deduction</A>.
+<A HREF="http://www.springer.com/west/home/computer/artificial?SGWID=4-147-70-35674745-0">
+Annals of Mathematics and Artificial Intelligence</A>, 29(1-4):223-257, 2000;
+<A HREF="http://doi.org/10.1023/A:1018932114059">DOI: 10.1023/A:1018932114059</A>.
+</ul>
+<p>
+<li><b>Peers-mcd.d (April 2000 - July 2001)</b> was developed
+in the spring and summer of 2000,
+making available in the framework of Modified Clause-Diffusion
+both distributed search and <em>multi-search</em>,
+that differentiates the searches generated by the parallel processes
+by assigning them different search plans.
+Peers-mcd.d can work in three modes:
+<ul>
+<li><em>Pure distributed-search mode:</em>
+search space subdivided among the processes - all processes execute the same search plan.
+<li><em>Pure multi-search mode:</em>
+search space not subdivided - every process executes a different search plan.
+<li><em>Hybrid mode:</em>
+search space subdivided - the processes execute different search plans.
+</ul>
+For each mode, the prover implements various strategies described in
+<ul>
+<li>Maria Paola Bonacina.
+<A HREF="http://profs.sci.univr.it/~bonacina/papers/IJCAR2001peersmcdd.pdf">
+Combination of distributed search and multi-search in Peers-mcd.d</A>.
+In <em>Proceedings of the 1st International Joint Conference on Automated Reasoning
+(IJCAR)</em>, Siena, Italy, June 2001.
+<A HREF="https://link.springer.com/">Springer</A>,
+Lecture Notes in Artificial Intelligence 2083, 448-452, 2001;
+<A HREF="http://doi.org/10.1007/3-540-45744-5_37">DOI: 10.1007/3-540-45744-5_37</A>.
+</ul>
+together with experiments showing that Peers-mcd.d can prove the
+<em>Moufang identities in alternative rings</em> without cancellation laws and
+exhibiting instances of super-linear speed-up due to parallel search.<br>
+</ul>
+</ul>
+All these provers are in the <A HREF="https://theoremprover-museum.github.io/">Theorem Prover Museum</A>.
+<p>
+<IMG ALIGN=LEFT SRC="owl.gif"><hr><br>
+<p>
+<A HREF="http://profs.sci.univr.it/~bonacina/index.html">
+<em>Maria Paola Bonacina</em></A>

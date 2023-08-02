@@ -1,0 +1,119 @@
+<HTML>
+<HEAD>
+<link rel="icon" href="http://profs.sci.univr.it/~bonacina/owl.gif" type="image/gif" />
+<TITLE>Completion-based and resolution-based theorem proving</TITLE>
+</HEAD>
+<BODY BGCOLOR="#99FF99">
+<H2>Completion-based and resolution-based theorem proving</H2>
+
+The problem of combining <em>forward</em> and <em>backward</em> reasoning,
+or reasoning from the assumptions and reasoning from the target theorem,
+has been a fundamental problem since the birth of automated theorem proving:
+<ul>
+<li>Maria Paola Bonacina.
+<A HREF="http://profs.sci.univr.it/~bonacina/papers/JAR2022LWHistoricSurvey.pdf">Set of support, demodulation, paramodulation: a historical perspective</A>.
+<A HREF="https://www.springer.com/journal/10817"><em>Journal of Automated Reasoning</em></A>, 66(4):463-497, November 2022;
+<A HREF="http://doi.org/10.1007/s10817-022-09628-0">DOI: 10.1007/s10817-022-09628-0</A>; <A HREF="https://rdcu.be/cOgrb">Springer Nature SharedIt</A>.
+<p>
+<li>Michael Beeson, Maria Paola Bonacina, Michael Kinyon, and Geoff Sutcliffe.
+<A HREF="http://profs.sci.univr.it/~bonacina/papers/JAR2022LWvisionsAR.pdf">Larry Wos - Visions of automated reasoning</A>.
+<A HREF="https://www.springer.com/journal/10817"><em>Journal of Automated Reasoning</em></A>, 66(4):439-461, November 2022;
+<A HREF="http://doi.org/10.1007/s10817-022-09620-8">DOI: 10.1007/s10817-022-09620-8</A>.
+</ul>
+In my own research, I studied <em>lemmaizing and caching</em> techniques as a way of combining forward and backward
+reasoning in <em>semantic resolution</em> and <em>model elimination</em>:
+<ul>
+<li>Maria Paola Bonacina and Jieh Hsiang.
+<A HREF="http://profs.sci.univr.it/~bonacina/papers/NGC1998semrlc.pdf">On semantic resolution with lemmaizing and contraction and a formal treatment of caching</A>.
+<A HREF="http://www.ohmsha.co.jp/ngc/index.htm">New Generation Computing</A> 16(2):163-200, February 1998;
+<A HREF="http://doi.org/10.1007/BF03037315">DOI: 10.1007/BF03037315</A>.
+<p>
+<li>Maria Paola Bonacina and Jieh Hsiang.
+<A HREF="http://profs.sci.univr.it/~bonacina/papers/PRICAI1996semrlc.pdf">On semantic resolution with lemmaizing and contraction</A>.
+<em>Proceedings of the 4th Pacific Rim International Conference on AI (PRICAI)</em>, <A HREF="https://link.springer.com/">Springer</A>, Lecture Notes in Artificial Intelligence 1114, 372-386, 1996;
+<A HREF="http://doi.org/10.1007/3-540-61532-6_32">DOI: 10.1007/3-540-61532-6_32</A>
+(part of this work was presented at the <A HREF="http://www.dagstuhl.de/9512/">Dagstuhl Seminar 9512 on Deduction</A>, March 1995: <A HREF="http://profs.sci.univr.it/~bonacina/talks/Dagstuhl1995lemmaizing-slides.pdf">Slides</A>).
+</ul>
+I also attacked this problem in completion-based theorem proving, formulating a framework, based on
+well-founded proof orderings, where <em>completion procedures</em> are <em>semidecision procedures</em>
+for theorem proving. The resulting theorem-proving strategies are <em>target-oriented</em> and
+<em>contraction-based</em>. The notions of <em>proof reduction</em>, <em>fairness</em>,
+and <em>redundancy</em> become target-oriented.
+<em>Contraction-based</em> strategies have an inference system with <em>contraction rules</em>
+and an <em>eager-contraction</em> search plan.
+Contraction rules delete or replace redundant clauses, as in subsumption and simplification,
+while <em>expansion rules</em>, such as resolution and paramodulation/superposition, only generate clauses.
+Eager contraction keeps the database of clauses as small as possible, which is critical to prove theorems
+such as the "Dependency of the Fifth Axiom" in Lukasiewicz's many-valued logic:
+<ul>
+<li>Maria Paola Bonacina and Jieh Hsiang.
+<A HREF="http://profs.sci.univr.it/~bonacina/papers/TCS1995completion.pdf">Towards
+a foundation of completion procedures as semidecision procedures</A>.
+<A HREF="http://www.elsevier.com/wps/find/journaldescription.cws_home/505625/description#description">Theoretical
+Computer Science</A>, 146:199-242, July 1995;
+<A HREF="http://doi.org/10.1016/0304-3975(94)00187-N">DOI: 10.1016/0304-3975(94)00187-N</A>.
+<p>
+<li>Maria Paola Bonacina and Jieh Hsiang.
+<A HREF="http://profs.sci.univr.it/~bonacina/papers/ACAMC1991simp.pdf">High performance simplification-based automated deduction</A>.
+<em>Transactions of the 9th US Army Conference on Applied Mathematics and Computing</em>, ARO Report 92-1, 321-335, 1992.
+<p>
+<li>Maria Paola Bonacina.
+<A HREF="http://profs.sci.univr.it/~bonacina/papers/AAR1991Lukasiewicz.pdf">Problems in Lukasiewicz logic</A>.
+<em>Newsletter of the <A HREF="http://www.aarinc.org/"> Association for Automated Reasoning</A></em>, No. 18, 5-12, June 1991.
+<p>
+<li>Maria Paola Bonacina and Jieh Hsiang.
+<A HREF="http://profs.sci.univr.it/~bonacina/papers/RTA1991fairness.pdf">On fairness of
+completion-based theorem proving strategies</A>.
+<em>Proceedings of the 4th Conference on Rewriting Techniques and Applications (RTA)</em>,
+<A HREF="https://link.springer.com/">Springer</A>,
+Lecture Notes in Computer Science 488, 348-360, 1991;
+<A HREF="http://doi.org/10.1007/3-540-53904-2_109">DOI: 10.1007/3-540-53904-2_109</A>.
+<p>
+<li>Maria Paola Bonacina and Jieh Hsiang.
+<A HREF="http://profs.sci.univr.it/~bonacina/papers/CTRS1990completion.pdf">Completion
+procedures as semidecision procedures</A>.
+<em>Proceedings of the Workshop on Conditional and Typed Rewriting Systems (CTRS) 1990</em>, <A HREF="https://link.springer.com/">Springer</A>,
+Lecture Notes in Computer Science 516, 206-232, 1991;
+<A HREF="http://doi.org/10.1007/3-540-54317-1_92">DOI: 10.1007/3-540-54317-1_92</A>.
+<p>
+<li>Siva Anantharaman and Maria Paola Bonacina.
+An application of automated equational reasoning to many-valued logic.
+In <em>Proceedings of the Workshop on Conditional and Types Rewriting Systems (CTRS) 1990</em>, <A HREF="https://link.springer.com/">Springer</A>,
+Lecture Notes in Computer Science 516, 156-161, 1991;
+<A HREF="http://doi.org/10.1007/3-540-54317-1_88">DOI: 10.1007/3-540-54317-1_88</A>.
+(This version in the post-workshop proceedings replaced the version presented at the workshop
+entitled <A HREF="http://profs.sci.univr.it/~bonacina/papers/CTRS1990sbr3.pdf">An application
+of the theorem prover SBR3 to many-valued logic</A>.)
+<p>
+<li>Siva Anantharaman, Nirina Andrianarivelo, Maria Paola Bonacina and Jieh Hsiang.
+<A HREF="http://profs.sci.univr.it/~bonacina/papers/TR1990sbr3.pdf">
+SBR3: a refutational prover for equational theorems</A>.
+Technical Report, Department of Computer Science, State University
+of New York at Stony Brook, May 1990, 1-6.
+<p>
+<li>Siva Anantharaman and Maria Paola Bonacina.
+<A HREF="http://profs.sci.univr.it/~bonacina/papers/TR1989Lukasiewicz.pdf">
+Automated proofs in Lukasiewicz logic</A>.
+Technical Report, Department of Computer Science, State University
+of New York at Stony Brook, and Research Report No. 89-11, LIFO Orl&eacute;ans,
+November 1989, 1-14.
+</ul>
+I also worked on rewrite programs interpreted by Linear Completion, showing that they are not equivalent to Prolog:
+<ul>
+<li>Maria Paola Bonacina and Jieh Hsiang.
+<A HREF="http://profs.sci.univr.it/~bonacina/papers/JLP1992rewprograms.pdf">On rewrite programs:
+semantics and relationship with Prolog</A>.
+<A HREF="http://www.informatik.uni-trier.de/~ley/db/journals/jlp/">The Journal of Logic Programming</A>, 14(1 & 2):155-180, October 1992; <A HREF="http://doi.org/10.1016/0743-1066(92)90050-D">DOI: 10.1016/0743-1066(92)90050-D</A>.
+<p>
+<li>Maria Paola Bonacina and Jieh Hsiang.
+<A HREF="http://profs.sci.univr.it/~bonacina/papers/NACLP1990rewprograms.pdf">Operational and
+denotational semantics of rewrite programs</A>.
+<em>Proceedings of the North American Conference on Logic Programming (NACLP)</em>,
+MIT Press, Logic Programming Series, 449-464, 1990.
+</ul>
+Earlier versions of the work on completion appeared in my <A HREF="http://profs.sci.univr.it/~bonacina/pub_theses.html">PhD and doctoral theses</A>.
+<p>
+<IMG ALIGN=LEFT SRC="owl.gif"><hr><br>
+<p>
+<A HREF="http://profs.sci.univr.it/~bonacina/index.html"><em>Maria Paola Bonacina</em></A>
+

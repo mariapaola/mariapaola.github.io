@@ -1,0 +1,64 @@
+<HTML>
+<HEAD>
+<link rel="icon" href="http://profs.sci.univr.it/~bonacina/owl.gif" type="image/gif" />
+<TITLE>DPLL(&Gamma;+T) and decision procedures with speculative inferences</TITLE>
+</HEAD>
+<BODY BGCOLOR="#99FF99">
+<H2>CDCL(&Gamma;+T) and decision procedures with speculative inferences</H2>
+
+CDCL(&Gamma;+<em>T</em>) is a reasoning method that integrates tightly a
+superposition-based first-order inference system, the parameter &Gamma;, in a
+CDCL(<em>T</em>) based SMT-solver.
+The original name is DPLL((&Gamma;+<em>T</em>), but if one uses CDCL(<em>T</em>) in place of
+DPLL(<em>T</em>), as it has become common, then one should say CDCL(&Gamma;+<em>T</em>).
+CDCL(&Gamma;+<em>T</em>) is presented as a transition system, where the &Gamma;-transitions
+deal with non-ground clauses and uninterpreted symbols, while the CDCL(<em>T</em>) transitions
+deal with ground clauses and interpreted symbols; both see unit ground clauses made of
+uninterpreted symbols. They communicate through the <em>trail</em> that represents the
+candidate model built by the SMT-solver, as &Gamma; uses literals in the trail as premises.
+Thus, the &Gamma;-inferences are <em>model-driven</em>. CDCL(&Gamma;+<em>T</em>) is
+refutationally complete, and combines both built-in and axiomatized theories.
+It allows <em>speculative inferences</em> to induce termination on satisfiable inputs and
+is a <em>decision procedure</em> for several theories, including axiomatizations of
+<em>type systems</em> relevant to software verification:
+<p>
+<ul>
+<li>Maria Paola Bonacina, Christopher A. Lynch and Leonardo de Moura.
+<A HREF="http://profs.sci.univr.it/~bonacina/papers/JAR2011dpllSPsi.pdf">On
+deciding satisfiability by theorem proving with speculative inferences</A>.
+<A HREF="https://www.springer.com/journal/10817"><em>Journal of Automated Reasoning</em></A>, 47(2):161-189, August 2011; <A HREF="http://doi.org/10.1007/s10817-010-9213-y">DOI: 10.1007/s10817-010-9213-y</A>
+(presented in part at the <A HREF="http://www.cs.unm.edu/~veroff/ADAM/2013/">Workshop on Automated Deduction and its Application to Mathematics (ADAM)</A>, Department of Computer Science, University of New Mexico, Albuquerque, New Mexico, USA, June 2013:
+<A HREF="http://profs.sci.univr.it/~bonacina/talks/ADAM+UIUC2013dpllGammaT-slides.pdf">Slides</A>).
+<p>
+<li>Maria Paola Bonacina.
+<A HREF="http://profs.sci.univr.it/~bonacina/papers/PPDP2010OnTPforPC.pdf">
+On theorem proving for program checking - Historical perspective and recent developments</A>.
+In <em>Proceedings of the 12th International ACM SIGPLAN Symposium on Principles and Practice of Declarative Programming (PPDP)</em>,
+Schloss Hagenberg, Linz, Austria, July 2010. ACM Press, 1-11, 2010 (<b>invited talk</b>);
+<A HREF="http://doi.org/10.1145/1836089.1836090">DOI: 10.1145/1836089.1836090</A>
+(<A HREF="http://profs.sci.univr.it/~bonacina/ACMcopyrightnotice.html">&#169;[ACM Inc.][2010]</A>).
+<p>
+<li>Maria Paola Bonacina, Christopher A. Lynch and Leonardo de Moura.
+<A HREF="http://profs.sci.univr.it/~bonacina/papers/CADE2009dpllSPutp.pdf">On
+deciding satisfiability by DPLL(&Gamma;+<em>T</em>) and unsound theorem
+proving</A>. In <em>Proceedings of the 22nd International Conference on Automated Deduction
+(CADE)</em>, Montr&eacute;al, Canada, August 2009.
+<A HREF="https://link.springer.com/">Springer</A>,
+Lecture Notes in Artificial Intelligence 5663, 35-50, 2009;
+<A HREF="http://doi.org/10.1007/978-3-642-02959-2_3">DOI: 10.1007/978-3-642-02959-2_3</A>
+(presented in part at the <A HREF="http://www.dagstuhl.de/09411/">Dagstuhl
+Seminar 09411 on Interaction vs. Automation: the Two Faces of Deduction</A>,
+October 2009:
+<A HREF="http://profs.sci.univr.it/~bonacina/talks/Dagstuhl2009dpllGammaT-slides.pdf">Slides</A>).
+<p>
+<li>Maria Paola Bonacina.
+<A HREF="http://profs.sci.univr.it/~bonacina/papers/CILC2013modelbased.pdf">On
+model-based reasoning: recent trends and current developments (Abstract)</A>.
+In <em><A HREF="http://ceur-ws.org/Vol-1068/">Proceedings of the 28th Italian Conference on Computational Logic (CILC)</A></em>, Catania, Italy,
+September 2013. <A HREF="http://ceur-ws.org/">CEUR</A> Proceedings 1068:<A HREF="http://ceur-ws.org/Vol-1068/paper-i02.pdf">9-9</A>, 2013 (<b>invited talk</b>).
+</ul>
+<p>
+<IMG ALIGN=LEFT SRC="owl.gif"><hr><br>
+<p>
+<A HREF="http://profs.sci.univr.it/~bonacina/index.html">
+<em>Maria Paola Bonacina</em></A>
